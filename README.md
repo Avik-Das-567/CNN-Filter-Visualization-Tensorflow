@@ -53,9 +53,9 @@ The notebook is organized into the following stages:
 - Explanation of activation maximization  
 
 ### 2. Model Loading
-- Load pretrained **VGG16** model (without top classification layers)  
-- Freeze weights to preserve learned representations  
-- Prepare model for inference  
+- Load pretrained **VGG16** model (without top classification layers)
+- Use pretrained weights to extract learned representations
+- Prepare model for inference
 
 ### 3. Submodel Construction
 - Extract outputs of intermediate convolutional layers  
@@ -71,11 +71,11 @@ The notebook is organized into the following stages:
 
 Core pipeline:
 
-1. Select a layer and filter index  
-2. Forward pass → compute filter activation  
-3. Compute gradients w.r.t input image  
-4. Normalize gradients for stability  
-5. Update image iteratively  
+1. Select a layer and filter index
+2. Forward pass → compute filter activation
+3. Compute gradients w.r.t input image
+4. Normalize gradients (e.g., using standard deviation) to stabilize updates
+5. Update image iteratively
 
 Additional details:
 - Uses TensorFlow’s `GradientTape`  
@@ -83,10 +83,10 @@ Additional details:
 - Runs for multiple iterations to refine patterns  
 
 ### 6. Image Post-processing
-- Convert optimized tensor into displayable image  
-- Normalize pixel values  
-- Clip to valid range  
-- Improve visual clarity  
+- Convert optimized tensor into displayable image
+- Normalize pixel values
+- Rescale and format pixel values for visualization 
+- Improve visual clarity
 
 ### 7. Visualization of Filters
 - Generate images for multiple filters  
