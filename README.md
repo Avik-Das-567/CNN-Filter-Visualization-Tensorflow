@@ -1,6 +1,4 @@
-# 📌 CNN Filter Visualization using TensorFlow (VGG16)
-
-## 📖 Overview
+# CNN Filter Visualization using TensorFlow (VGG16)
 
 This project explores the internal representations learned by a Convolutional Neural Network (CNN) by visualizing the patterns that maximally activate its filters. Using the pretrained **VGG16** architecture in TensorFlow, the project applies **gradient ascent** to generate synthetic input images that strongly activate specific convolutional filters.
 
@@ -8,7 +6,7 @@ The goal is to provide interpretability into CNN feature hierarchies by transfor
 
 ---
 
-## 🎯 Objectives
+## Objectives
 
 - Implement **gradient ascent in input space** to maximize filter activations  
 - Extract and analyze intermediate representations from a pretrained CNN  
@@ -17,7 +15,7 @@ The goal is to provide interpretability into CNN feature hierarchies by transfor
 
 ---
 
-## 🧠 Key Concepts
+## Key Concepts
 
 ### Convolutional Neural Networks (CNNs)
 
@@ -25,8 +23,6 @@ CNNs learn spatial hierarchies of features:
 - Early layers → edges, textures  
 - Middle layers → patterns, shapes  
 - Deeper layers → object parts and semantics  
-
----
 
 ### Filter Visualization via Activation Maximization
 
@@ -38,8 +34,6 @@ This is achieved by:
 - Iteratively updating it using gradients  
 - Maximizing the response of a selected filter  
 
----
-
 ### Gradient Ascent
 
 Given a target filter activation:
@@ -49,13 +43,11 @@ Given a target filter activation:
 
 Mathematically:
 
-\[
+$$
 x_{new} = x + \eta \cdot \frac{\partial \text{activation}}{\partial x}
-\]
+$$
 
----
-
-## 🏗️ Project Structure
+## Project Structure
 
 The notebook is organized into the following stages:
 
@@ -64,28 +56,20 @@ The notebook is organized into the following stages:
 - Motivation for filter visualization  
 - Explanation of activation maximization  
 
----
-
 ### 2. Model Loading
 - Load pretrained **VGG16** model (without top classification layers)  
 - Freeze weights to preserve learned representations  
 - Prepare model for inference  
-
----
 
 ### 3. Submodel Construction
 - Extract outputs of intermediate convolutional layers  
 - Build submodels targeting specific layers  
 - Enable access to feature maps at different depths  
 
----
-
 ### 4. Image Initialization
 - Start from a random noise image  
 - Normalize input for stable optimization  
 - Ensure compatibility with VGG16 preprocessing  
-
----
 
 ### 5. Gradient Ascent Optimization Loop
 
@@ -102,24 +86,18 @@ Additional details:
 - Applies controlled step size  
 - Runs for multiple iterations to refine patterns  
 
----
-
 ### 6. Image Post-processing
 - Convert optimized tensor into displayable image  
 - Normalize pixel values  
 - Clip to valid range  
 - Improve visual clarity  
 
----
-
 ### 7. Visualization of Filters
 - Generate images for multiple filters  
 - Compare patterns across layers  
 - Observe increasing abstraction with depth  
 
----
-
-## 🔬 Observations & Insights
+## Observations & Insights
 
 - **Early Layers**  
   Produce simple patterns such as:
@@ -138,16 +116,12 @@ Additional details:
   - Object-like structures  
   - Semantic patterns  
 
----
-
-## ⚙️ Technical Details
+## Technical Details
 
 ### Model
 - Architecture: **VGG16**  
 - Weights: ImageNet pretrained  
 - Framework: TensorFlow / Keras  
-
----
 
 ### Optimization Strategy
 - Objective: Maximize mean activation of a selected filter  
@@ -156,34 +130,26 @@ Additional details:
   - Gradient normalization  
   - Controlled learning rate  
 
----
-
 ### Input Handling
 - Random noise initialization  
 - Preprocessing aligned with VGG16 expectations  
 - Continuous updates via differentiable pipeline  
 
----
-
-## 📊 Output
+## Output
 
 The project produces:
 - Synthetic images representing **maximally activating patterns**  
 - Layer-wise visualization of learned features  
 - Insight into hierarchical feature extraction  
 
----
+## Tech Stack
 
-## 🧾 Tech Stack
+- Python
+- TensorFlow / Keras
+- NumPy
+- Matplotlib
+- Google Colab
 
-- Python  
-- TensorFlow / Keras  
-- NumPy  
-- Matplotlib  
-- Google Colab (GPU-enabled execution)  
-
----
-
-## 📌 Conclusion
+## Conclusion
 
 This project demonstrates how neural networks internally encode visual information and how these representations can be reverse-engineered into interpretable patterns. By leveraging gradient ascent, we gain direct insight into what each convolutional filter is "looking for," providing a powerful tool for understanding deep learning models beyond black-box behavior.
