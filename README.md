@@ -142,9 +142,7 @@ The project produces:
 
 - Python
 - TensorFlow / Keras
-- NumPy
 - Matplotlib
-- Google Colab
 
 ## Conclusion
 
