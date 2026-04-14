@@ -91,7 +91,7 @@ Additional details:
 ### 7. Visualization of Filters
 - Generate images for multiple filters  
 - Compare patterns across layers  
-- Observe increasing abstraction with depth  
+- Observe the progression of feature abstraction with network depth  
 
 ## Observations & Insights
 
