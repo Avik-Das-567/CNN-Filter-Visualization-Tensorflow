@@ -4,16 +4,12 @@ This project explores the internal representations learned by a Convolutional Ne
 
 The goal is to provide interpretability into CNN feature hierarchies by transforming abstract activations into human-interpretable visual patterns.
 
----
-
 ## Objectives
 
 - Implement **gradient ascent in input space** to maximize filter activations  
 - Extract and analyze intermediate representations from a pretrained CNN  
 - Visualize **feature maps learned at different convolutional layers**  
 - Understand how hierarchical features evolve across network depth  
-
----
 
 ## Key Concepts
 
